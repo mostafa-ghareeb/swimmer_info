@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function swimmer()
+    {
+        return $this->hasMany(Swimmer::class);
+    }
 }

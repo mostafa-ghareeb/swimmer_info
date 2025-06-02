@@ -46,6 +46,14 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        'swimmers' => [
+            'driver' => 'local',
+            'root' => public_path('images'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
 
         's3' => [
             'driver' => 's3',
