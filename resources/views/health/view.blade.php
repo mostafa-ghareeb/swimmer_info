@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="flex justify-end gap-3 mb-6">
-        <a href="{{--{{ route('swimmers.destroy', $swimmer->id) }}--}}"
+        <a href="{{ route('swimmers.health.edit', $health->id) }}"
             class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-medium px-4 py-2 rounded shadow transition">
             ✏️ Edit
         </a>
-        <form action="{{--{{ route('swimmers.destroy', $swimmer->id) }}--}}" method="POST" onsubmit="return confirm('Are you sure you want to delete this swimmer?')">
+        <form action="{{ route('swimmers.health.delete', $health->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this swimmer?')">
             @csrf
             @method('DELETE')
             <button type="submit"

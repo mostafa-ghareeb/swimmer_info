@@ -30,7 +30,7 @@
             class="bg-green-600 hover:bg-green-700 text-white text-sm font-medium px-4 py-2 rounded shadow transition">
             ➕ Create Health Status
         </a>
-        <a href=""
+        <a href="{{ route('swimmers.sport.data.create', $swimmer->id) }}"
             class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded shadow transition">
             🏊 Sport Data
         </a>
@@ -84,7 +84,7 @@
             View Health Status
         </a>
 
-        <a href="" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-lg transition">
+        <a href="{{route('swimmers.sport.data.view' , $swimmer->id)}}" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-lg transition">
             View Sport Data
         </a>
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HealthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SportDataController;
 use App\Http\Controllers\SwimmerController;
 use App\Models\Swimmer;
 use Illuminate\Support\Facades\Route;
@@ -28,10 +29,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/swimmer/view/{swimmer}', [SwimmerController::class, 'view'])->name('swimmers.view');
     Route::delete('/swimmer/delete/{swimmer}', [SwimmerController::class, 'delete'])->name('swimmers.delete');
     
-    Route::get('/swimmers/health/view/{swimmer}', [HealthController::class, 'view'])->name('swimmers.health.view');
-    Route::get('/swimmers/health/create/{swimmer}', [HealthController::class, 'create'])->name('swimmers.health.create');
-    Route::post('/swimmers/health/store/{swimmer}', [HealthController::class, 'store'])->name('swimmers.health.store');
+    Route::get('/swimmer/health/view/{swimmer}', [HealthController::class, 'view'])->name('swimmers.health.view');
+    Route::get('/swimmer/health/create/{swimmer}', [HealthController::class, 'create'])->name('swimmers.health.create');
+    Route::post('/swimmer/health/store/{swimmer}', [HealthController::class, 'store'])->name('swimmers.health.store');
+    Route::get('/swimmer/health/edit/{health}', [HealthController::class, 'edit'])->name('swimmers.health.edit');
+    Route::put('/swimmer/health/edit/{health}', [HealthController::class, 'update'])->name('swimmers.health.update');
+    Route::delete('/swimmer/health/delete/{healthCondition}', [HealthController::class, 'delete'])->name('swimmers.health.delete');
     
+
+    Route::get('/swimmer/sport/data/view/{swimmer}',[SportDataController::class , 'view'])->name('swimmers.sport.data.view');
+    Route::get('/swimmer/sport/data/create/{swimmer}',[SportDataController::class , 'create'])->name('swimmers.sport.data.create');
+    Route::post('/swimmer/sport/data/store/{swimmer}',[SportDataController::class , 'store'])->name('swimmers.sport.data.store');
 });
 
 

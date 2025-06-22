@@ -30,7 +30,6 @@ class UpdateHealthRequest extends FormRequest
             'type_of_operation' => ['nullable', 'string', 'max:255'],
             'sports_injuries' => ['nullable', 'boolean'],
             'type_of_injury' => ['nullable', 'string', 'max:255'],
-            'swimmer_id' => ['required', 'exists:swimmers,id'],
         ];
     }
 }
